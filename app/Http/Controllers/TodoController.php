@@ -91,7 +91,7 @@ class TodoController extends Controller
      */
     private function formatRequest(Request $request)
     {
-        $data['body'] = $request->get('body') ? $request->get('body') : null;
+        $data['body']  = $request->get('body') ? $request->get('body') : null;
         $data['title'] = $request->get('title') ? $request->get('title') : null;
 
         return $data;
