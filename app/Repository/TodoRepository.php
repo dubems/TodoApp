@@ -42,12 +42,17 @@ class TodoRepository
      */
     public function create(array $data)
     {
-        $todo        = new Todo();
-        $todo->title = $data['title'];
-        $todo->body  = $data['body'];
-        $todo->save();
+        if(!is_null($data['title'] && !is_null($data['body']))){
+            $todo        = new Todo();
+            $todo->title = $data['title'];
+            $todo->body  = $data['body'];
+            $todo->save();
 
-        return $todo;
+            return $todo;
+        }
+        
+        return "Kindly provide title and body of the todo";
+       
     }
 
     /** Update a todo

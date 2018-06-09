@@ -48,7 +48,8 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->todoRepository->create($this->formatRequest($request));
+        $response = $this->todoRepository->create($this->formatRequest($request));
+        return response()->json($response);
     }
 
     /**
